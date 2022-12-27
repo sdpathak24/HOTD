@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"  />
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>HOTD!</title>
+  </head>
+  <body onload="startTime()">
+    <div class="container">
+      <h1 class="heading" id="heading">What's your hightlight of the day?</h1>
+      <br />
+      <div class="main-area">
+        <input type="text" placeholder="add here" id="input" autofocus />
+        <button class="btn-add" onclick="add()">HOTD!</button>
+      </div>
+      <h1><div class="display" id="display"></div></h1>
+      <div class="share">
+        <button class="btn-share" onclick="share()" id="share">Share</button>
+      </div>
+    </div>
+    <div class="info" id="infobtn" onclick="showInfo()">i</div>
+    <div id="infoContainer" style="display: none;" class="info-container">
+      <div class="info-text">
+        This app helps you to boost your productivity and encourage you to do stuff that you like! You can add what feels to be your HOTD! and share it with your friends.
+      </div>
+    </div>
+  </body>
+
+  <style>
+/*
+body {
+    background-color:goldenrod;
+    font-family: sans-serif;
+    color: #000;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 20%;
+    background-color: #fffc00;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .display {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: #fffc00;
+    }
+  
+    h1 {
+      color: #000;
+      font-size: 18px;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+      background-color: #000;
+      color: #fffc00;
+    }
+  
+    .display {
+      color: #000;
+    }
+  }
+
+  */
+  </style>
+
+
+  <script src="app.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script> -->
+</html>

@@ -22,6 +22,7 @@ function add() {
     alert("enter something");
   } else {
     localStorage.setItem(startTime(), input.value);
+    // console.log(localStorage);
     input.value = "";
     /* Convert to image to be added*/
   }

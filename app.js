@@ -28,7 +28,7 @@ function add() {
 }
 
 function share() {
-  if (display.innerHTML = '') {
+  if (display.innerHTML != '') {
     if (navigator.share) {
       navigator
         .share({

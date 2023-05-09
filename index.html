@@ -24,96 +24,70 @@
     <meta name="theme-color" content="#ffffff">
     <title>HOTD!</title>
   </head>
-  <body onload="startTime()">
+  <body>
     <div class="container">
-      <h1 class="heading" id="heading">What's your hightlight of the day?</h1>
-      <br />
-      <div class="main-area">
-        <input type="text" placeholder="add here" id="input" autofocus />
-        <button class="btn-add" onclick="add()">HOTD!</button>
-      </div>
-      <h1><div class="display" id="display">hello</div></h1>
-      <div class="share">
-        <button class="btn-share" onclick="share()" id="share">Share</button>
-      </div>
-    </div>
-    <div class="info" id="infobtn" onclick="showInfo()">i</div>
-    <div id="infoContainer" style="display: none;" class="info-container">
-      <div class="info-text">
-        This app helps you to boost your productivity and encourage you to do stuff that you like! You can add what feels to be your HOTD! and share it with your friends. Add this to your homescreen to use it as normal app
-      </div>
+        <h1 class="header" id="header">What's your hightlight of the day?</h1>
+        <div class="main-area">
+            <!-- <div class="display" id="display">HOTD!</div> -->
+            <!-- <div class="watermark">#HOTD</div> -->
+            <input type="text" class="formal" placeholder="add here" id="textInput" autofocus />
+            <div class="scroller-container">
+                <ul class="scroller">
+                    <li onclick="color(this)" class="formal" id="formal">
+                        formal
+                    </li>
+                    <li onclick="color(this)" class="bold" id="bold">
+                        bold
+                    </li>
+                    <li onclick="color(this)" class="sassy" id="sassy">
+                        sassy
+                    </li>
+                    <li onclick="color(this)" class="casual" id="casual">
+                        casual
+                    </li>
+                    <li onclick="color(this)" class="techy" id="techy">
+                        techy
+                    </li>
+                </ul>
+            </div>
+            <div class="btn">
+                <button id="saveButton">HOTD!</button>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <div class="foot-home">
+                            home
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="google.com">
+                        <div class="foot-search">
+                            srch
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="twitter.com">
+                        <div class="foot-noti">
+                            noti
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="google.com">
+                        <div class="foot-acc">
+                            acc
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
   </body>
 
-  <style>
-/*
-body {
-    background-color:goldenrod;
-    font-family: sans-serif;
-    color: #000;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    width: 20%;
-    background-color: #fffc00;
-    color: #000;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .display {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    body {
-      background-color: #fffc00;
-    }
-  
-    h1 {
-      color: #000;
-      font-size: 18px;
-    }
-  
-    input[type="text"] {
-      width: 100%;
-    }
-  
-    button {
-      width: 100%;
-      background-color: #000;
-      color: #fffc00;
-    }
-  
-    .display {
-      color: #000;
-    }
-  }
-
-  */
-  </style>
-
-
-  <script src="app.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script> -->
+  <script src="script.js"></script>
 </html>

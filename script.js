@@ -198,12 +198,37 @@ if (saveButton) {
     context.fillText(hotdText, x, canvas.height - hotdFontSize);
 
     // Convert canvas to image
-    const image = canvas.toDataURL("image/png");
+    // const image = canvas.toDataURL("image/png");
 
     // Save image
-    const link = document.createElement("a");
-    link.download = "myHOTD.png";
-    link.href = image;
-    link.click();
+    // const link = document.createElement("a");
+    // link.download = "myHOTD.png";
+    // link.href = image;
+    // link.click();
+
+    // Convert canvas to image
+const imageData = canvas.toDataURL("image/png");
+
+// Create a Blob object from the Base64-encoded data
+const byteString = atob(imageData.split(',')[1]);
+const mimeType = imageData.split(',')[0].split(':')[1].split(';')[0];
+const arrayBuffer = new ArrayBuffer(byteString.length);
+const uint8Array = new Uint8Array(arrayBuffer);
+for (let i = 0; i < byteString.length; i++) {
+  uint8Array[i] = byteString.charCodeAt(i);
+}
+const blob = new Blob([arrayBuffer], { type: mimeType });
+
+// Share the Blob object
+if (navigator.share) {
+  navigator.share({
+    title: 'HOTD',
+    files: [new File([blob], 'myHOTD.png', { type: 'image/png' })],
+  }).then(() => {
+    console.log('Thanks for sharing!');
+  }).catch(console.error);
+} else {
+  alert("Sorry, your browser doesn't support sharing.");
+}
   });
 }

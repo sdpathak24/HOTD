@@ -160,8 +160,8 @@ if (saveButton) {
     const context = canvas.getContext("2d");
 
     // Set canvas dimensions to square with size 500px by 500px
-    canvas.width = 500;
-    canvas.height = 500;
+    canvas.width = 400;
+    canvas.height = 400;
 
     // Set background color
     context.fillStyle = getComputedStyle(textInput).backgroundColor;

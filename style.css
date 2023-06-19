@@ -16,7 +16,6 @@
   src: url(Dancing_Script/DancingScript-VariableFont_wght.ttf);
 } */
 
-
 /* 
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap'); */
 
@@ -26,13 +25,14 @@ html {
   width: 100%;
 }
 
-html, body{
-  padding: 0; 
+html,
+body {
+  padding: 0;
   margin: 0;
   position: relative;
 }
 
-body{
+body {
   height: 100%;
   width: 100%;
   background-color: black;
@@ -45,9 +45,9 @@ h1 {
   text-align: center;
 }
 
-.container{
-    height: 100%;
-  }
+.container {
+  height: 100%;
+}
 
 .header {
   height: 9%;
@@ -76,7 +76,7 @@ h1 {
 textarea {
   /* width: 100%; */
   width: 400px;
-  height: 400px;
+  height: 300px;
   /* height: 60%; */
   /* background-color: #cb3536; */
   outline: none;
@@ -92,13 +92,13 @@ textarea {
   resize: none;
 }
 
-input::placeholder{
+input::placeholder {
   color: #3b3b3b;
 }
 
 .bold {
   /* font-family: 'Oswald Regular', sans-serif; */
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   background-color: #cb3536;
   color: #000;
@@ -106,25 +106,25 @@ input::placeholder{
 
 .casual {
   /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #e5e5e5;
   color: black;
 }
 
 .formal {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   background-color: #fff;
   color: black;
 }
 
 .techy {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: #000000;
   color: greenyellow;
 }
 
-.sassy{
-  font-family: 'Dancing Script', cursive;
+.sassy {
+  font-family: "Dancing Script", cursive;
   background-color: rgb(0, 149, 255);
   /* background: linear-gradient(90deg, rgba(14,0,255,1) 0%, rgba(64,64,255,1) 35%, rgba(0,131,158,1) 100%); */
   color: #fff;
@@ -175,7 +175,7 @@ button {
 
 li {
   display: flex;
-  width: calc(100%/4);
+  width: calc(100% / 4);
   justify-content: center;
   height: 60%;
   align-items: center;
@@ -198,7 +198,7 @@ a {
   height: 60%;
   align-items: center;
   display: flex;
-  width: calc(100%/4);
+  width: calc(100% / 4);
   justify-content: center;
   border: 1px solid white;
   text-decoration: none;

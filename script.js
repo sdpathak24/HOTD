@@ -33,7 +33,7 @@ function color(z) {
   // console.log(z.classList);
   textInput.classList.toggle(z.classList);
   textInput.classList.remove(textInput.classList[0]);
-  if(textInput.classList.length == 0){
+  if (textInput.classList.length == 0) {
     textInput.classList.add(z.classList);
   }
   console.log(textInput.classList);
@@ -51,7 +51,7 @@ for (let i = 0; i < localStorage.length; i++) {
     latestText = localStorage.getItem(key);
   }
 }
-textInput.value = latestText;
+textInput.value = localStorage.getItem(latestDate.toLocaleString());
 
 // Add event listener to input box
 textInput.addEventListener("input", function () {
@@ -78,27 +78,28 @@ textInput.addEventListener("input", function () {
       latestText = localStorage.getItem(key);
     }
   }
-  const savedTextElement = document.getElementById("savedText");
-  if (savedTextElement) {
-    const savedDate = latestDate.toLocaleString();
-    savedTextElement.textContent = `Saved text: ${latestText} (saved on ${savedDate})`;
+  // localStorage.getItem(now.toLocaleString());
+  // const savedTextElement = document.getElementById("savedText");
+  // if (savedTextElement) {
+  //   const savedDate = latestDate.toLocaleString();
+  //   savedTextElement.textContent = `Saved text: ${latestText} (saved on ${savedDate})`;
 
-    // Update share buttons
-    const twitterButton = document.getElementById("twitterButton");
-    const instagramButton = document.getElementById("instagramButton");
-    if (twitterButton) {
-      const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        latestText
-      )}`;
-      twitterButton.href = tweetUrl;
-    }
-    if (instagramButton) {
-      const instaUrl = `https://www.instagram.com/?text=${encodeURIComponent(
-        latestText
-      )}`;
-      instagramButton.href = instaUrl;
-    }
-  }
+  //   // Update share buttons
+  //   const twitterButton = document.getElementById("twitterButton");
+  //   const instagramButton = document.getElementById("instagramButton");
+  //   if (twitterButton) {
+  //     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  //       latestText
+  //     )}`;
+  //     twitterButton.href = tweetUrl;
+  //   }
+  //   if (instagramButton) {
+  //     const instaUrl = `https://www.instagram.com/?text=${encodeURIComponent(
+  //       latestText
+  //     )}`;
+  //     instagramButton.href = instaUrl;
+  //   }
+  // }
 
   // Enable clear and save buttons
   if (clearButton) {
@@ -160,8 +161,8 @@ if (saveButton) {
     const context = canvas.getContext("2d");
 
     // Set canvas dimensions to square with size 500px by 500px
-    canvas.width = 400;
-    canvas.height = 400;
+    canvas.width = 1000;
+    canvas.height = 1000;
 
     // Set background color
     context.fillStyle = getComputedStyle(textInput).backgroundColor;
@@ -170,16 +171,18 @@ if (saveButton) {
     // Set text style
     const computedStyle = getComputedStyle(textInput);
     context.fillStyle = computedStyle.color;
-    context.font = "100px " + computedStyle.fontFamily;
+    context.font = "80px " + computedStyle.fontFamily;
     context.fontsize = computedStyle.fontSize;
     context.textAlign = "center";
     context.textBaseline = "middle";
+    context.direction = computedStyle.direction;
 
     // Draw text on canvas
     const x = canvas.width / 2;
     const y = canvas.height / 2;
     const fontSize = parseInt(computedStyle.fontSize);
     const lineHeight = fontSize * 1.2; // adjust line height as needed
+    const maxWidth = canvas.width - 100; // leave some margin on the sides
     const lines = latestText.split("\n");
     const maxLines = Math.floor(canvas.height / lineHeight);
     if (lines.length > maxLines) {
@@ -193,7 +196,7 @@ if (saveButton) {
 
     // Add #HOTD text at the bottom of the canvas
     const hotdText = "#HOTD";
-    const hotdFontSize = 50;
+    const hotdFontSize = 30;
     context.font = `${hotdFontSize}px` + computedStyle.fontFamily;
     context.fillText(hotdText, x, canvas.height - hotdFontSize);
 
@@ -231,9 +234,13 @@ if (saveButton) {
         })
         .catch(console.error);
     } else {
+      alert(
+        "Sharing is not supported on this browser.\nDownloading image instead?"
+      );
       const link = document.createElement("a");
       link.download = "myHOTD.png";
-      link.href = image;
+      link.href = imageData;
       link.click();
-    }  });
+    }
+  });
 }

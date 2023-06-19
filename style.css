@@ -16,6 +16,11 @@
   src: url(Dancing_Script/DancingScript-VariableFont_wght.ttf);
 } */
 
+@font-face {
+  font-family: "Bebas Neue";
+  src: url(Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
 /* 
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap'); */
 
@@ -98,7 +103,8 @@ input::placeholder {
 
 .bold {
   /* font-family: 'Oswald Regular', sans-serif; */
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
   /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   background-color: #cb3536;
   color: #000;

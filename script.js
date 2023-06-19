@@ -145,16 +145,16 @@ if (clearButton) {
 if (saveButton) {
   saveButton.addEventListener("click", async function () {
     // Get latest text from local storage
-    let latestText = "";
-    let latestDate = new Date(0);
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const date = new Date(key);
-      if (date > latestDate) {
-        latestDate = date;
-        latestText = localStorage.getItem(key);
-      }
-    }
+    // let latestText = "";
+    // let latestDate = new Date(0);
+    // for (let i = 0; i < localStorage.length; i++) {
+    //   const key = localStorage.key(i);
+    //   const date = new Date(key);
+    //   if (date > latestDate) {
+    //     latestDate = date;
+    //     latestText = localStorage.getItem(key);
+    //   }
+    // }
 
     // Create a new canvas element
     const canvas = document.createElement("canvas");
@@ -171,7 +171,7 @@ if (saveButton) {
     // Set text style
     const computedStyle = getComputedStyle(textInput);
     context.fillStyle = computedStyle.color;
-    context.font = "80px " + computedStyle.fontFamily;
+    context.font = "100px " + computedStyle.fontFamily;
     context.fontsize = computedStyle.fontSize;
     context.textAlign = "center";
     context.textBaseline = "middle";
@@ -181,7 +181,7 @@ if (saveButton) {
     const x = canvas.width / 2;
     const y = canvas.height / 2;
     const fontSize = parseInt(computedStyle.fontSize);
-    const lineHeight = fontSize * 1.2; // adjust line height as needed
+    const lineHeight = fontSize * 1.5; // adjust line height as needed
     const maxWidth = canvas.width - 100; // leave some margin on the sides
     const lines = latestText.split("\n");
     const maxLines = Math.floor(canvas.height / lineHeight);
@@ -196,7 +196,7 @@ if (saveButton) {
 
     // Add #HOTD text at the bottom of the canvas
     const hotdText = "#HOTD";
-    const hotdFontSize = 30;
+    const hotdFontSize = 50;
     context.font = `${hotdFontSize}px` + computedStyle.fontFamily;
     context.fillText(hotdText, x, canvas.height - hotdFontSize);
 

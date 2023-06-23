@@ -108,7 +108,7 @@ if (saveButton) {
     if (navigator.share) {
       navigator
         .share({
-          title: "HOTD",
+          // title: "HOTD",
           files: [new File([imageData], "myHOTD.png", { type: "image/png" })],
         })
         .then(() => {

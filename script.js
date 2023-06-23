@@ -8,26 +8,9 @@ const formal = document.getElementById("formal");
 const casual = document.getElementById("casual");
 const techy = document.getElementById("techy");
 
-//change the style using scroller
-// casual.addEventListener('click', function() {
-//     textInput.classList.toggle('casual');
-//     // textInput.style.backgroundColor = '#e5e5e5'
-//     console.log('casual');
-// })
-
-// bold.addEventListener('click', function() {
-//     textInput.classList.toggle('bold');
-//     // textInput.style.backgroundColor = '#cb3536;'
-//     console.log('bold');
-// })
-
-// formal.addEventListener('click', function() {
-//     textInput.classList.toggle('formal');
-// })
-
-// techy.addEventListener('click', function() {
-//     textInput.classList.toggle('techy');
-// })
+// function reload() {
+//   window.location.reload();
+// }
 
 function color(z) {
   // console.log(z.classList);
@@ -41,105 +24,125 @@ function color(z) {
 }
 
 // Load saved text from local storage
-let latestText = "";
-let latestDate = new Date(0);
-for (let i = 0; i < localStorage.length; i++) {
-  const key = localStorage.key(i);
-  const date = new Date(key);
-  if (date > latestDate) {
-    latestDate = date;
-    latestText = localStorage.getItem(key);
-  }
-}
-textInput.value = localStorage.getItem(latestDate.toLocaleString());
+// let latestText = "";
+// let latestDate = new Date(0);
+// for (let i = 0; i < localStorage.length; i++) {
+//   const key = localStorage.key(i);
+//   const date = new Date(key);
+//   if (date > latestDate) {
+//     latestDate = date;
+//     latestText = localStorage.getItem(key);
+//   }
+// }
+// textInput.value = latestText;
 
 // Add event listener to input box
-textInput.addEventListener("input", function () {
-  // Get text from input box
-  const text = textInput.value;
+// textInput.addEventListener("input", function () {
+//   // Get text from input box
+//   const text = textInput.value;
 
-  // Get current date and time
-  const now = new Date();
+//   // Get current date and time
+//   const now = new Date();
 
-  const today = now.getDate();
+//   const today = now.getDate();
 
-  console.log(today);
-  // Save text to local storage with current date and time as key
-  localStorage.setItem(now.toLocaleString(), text);
+//   // Save text to local storage with current date and time as key
+//   localStorage.setItem(now.toLocaleString(), text);
 
-  // Update savedText display
-  let latestText = "";
-  let latestDate = new Date(0);
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const date = new Date(key);
-    if (date > latestDate) {
-      latestDate = date;
-      latestText = localStorage.getItem(key);
-    }
-  }
-  // localStorage.getItem(now.toLocaleString());
-  // const savedTextElement = document.getElementById("savedText");
-  // if (savedTextElement) {
-  //   const savedDate = latestDate.toLocaleString();
-  //   savedTextElement.textContent = `Saved text: ${latestText} (saved on ${savedDate})`;
+//   // Update savedText display
+//   let latestText = "";
+//   let latestDate = new Date(0);
+//   for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     const date = new Date(key);
+//     if (date > latestDate) {
+//       latestDate = date;
+//       latestText = localStorage.getItem(key);
+//     }
+//   }
+//   textInput.value = latestText;
+//   localStorage.getItem(now.toLocaleString());
+// });
 
-  //   // Update share buttons
-  //   const twitterButton = document.getElementById("twitterButton");
-  //   const instagramButton = document.getElementById("instagramButton");
-  //   if (twitterButton) {
-  //     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-  //       latestText
-  //     )}`;
-  //     twitterButton.href = tweetUrl;
-  //   }
-  //   if (instagramButton) {
-  //     const instaUrl = `https://www.instagram.com/?text=${encodeURIComponent(
-  //       latestText
-  //     )}`;
-  //     instagramButton.href = instaUrl;
-  //   }
-  // }
+// textInput.addEventListener("input", function () {
+//   // Get text from input box
+//   const text = textInput.value;
 
-  // Enable clear and save buttons
-  if (clearButton) {
-    clearButton.disabled = false;
-  }
-  if (saveButton) {
-    saveButton.disabled = false;
-  }
-});
+//   // Get current date and time
+//   const now = new Date();
 
-// Add event listener to clear button
-if (clearButton) {
-  clearButton.addEventListener("click", function () {
-    // Clear local storage
-    localStorage.clear();
+//   const today = now.getDate();
 
-    // Clear input box value
-    textInput.value = "";
+//   // Save text to local storage with current date and time as key
+//   localStorage.setItem(now.toLocaleString(), text);
 
-    // Disable clear and save buttons
-    clearButton.disabled = true;
-    saveButton.disabled = true;
+//   // Display text in the input box
+//   // textInput.value = localStorage.getItem(now.toLocaleString());
 
-    // Clear savedText display
-    const savedTextElement = document.getElementById("savedText");
-    if (savedTextElement) {
-      savedTextElement.textContent = "";
+//   // Load saved text from local storage
+//   let latestText = "";
+//   let latestDate = new Date(0);
+//   for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     const date = new Date(key);
+//     if (date > latestDate) {
+//       latestDate = date;
+//       latestText = localStorage.getItem(key);
+//     }
+//   }
+//   textInput.value = latestText;
+// });
 
-      // Disable share buttons
-      const twitterButton = document.getElementById("twitterButton");
-      const instagramButton = document.getElementById("instagramButton");
-      if (twitterButton) {
-        twitterButton.href = "#";
-      }
-      if (instagramButton) {
-        instagramButton.href = "#";
-      }
-    }
-  });
+// Load saved text from local storage
+// Load saved text from local storage
+// let latestText = "";
+// let latestDate = new Date(0);
+// for (let i = 0; i < localStorage.length; i++) {
+//   const key = localStorage.key(i);
+//   const date = new Date(key);
+//   if (date > latestDate) {
+//     latestDate = date;
+//     latestText = localStorage.getItem(key);
+//   }
+// }
+// textInput.value = latestText;
+
+// Add event listener to input box
+// Add event listener to input box
+// textInput.addEventListener("input", function () {
+//   // Get current date and time
+//   const now = new Date();
+
+//   // Save text to local storage with current date and time as key
+//   localStorage.setItem(now.toLocaleString(), textInput.value);
+
+//   // Load latest saved text from local storage
+//   let latestText = "";
+//   let latestDate = new Date(0);
+//   for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     const date = new Date(key);
+//     if (date > latestDate) {
+//       latestDate = date;
+//       latestText = localStorage.getItem(key);
+//     }
+//   }
+
+//   // Display latest saved text in input box
+//   textInput.value = latestText;
+// });
+
+const currentDate = new Date().toLocaleDateString();
+const savedText = localStorage.getItem(currentDate);
+if (savedText) {
+  textInput.value = savedText;
 }
+
+// Save text to local storage when the user types
+textInput.addEventListener("input", () => {
+  const currentDate = new Date().toLocaleDateString();
+  localStorage.setItem(currentDate, textInput.value);
+});
 
 // Add event listener to save button
 if (saveButton) {
@@ -155,6 +158,8 @@ if (saveButton) {
     //     latestText = localStorage.getItem(key);
     //   }
     // }
+
+    let latestText = localStorage.getItem(currentDate);
 
     // Create a new canvas element
     const canvas = document.createElement("canvas");

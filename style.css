@@ -17,8 +17,8 @@
 } */
 
 @font-face {
-  font-family: "Bebas Neue";
-  src: url(Bebas_Neue/BebasNeue-Regular.ttf);
+  font-family: "BebasNeue";
+  src: url(fonts/BebasNeue-Regular.ttf);
 }
 
 /* 
@@ -103,8 +103,7 @@ input::placeholder {
 
 .bold {
   /* font-family: 'Oswald Regular', sans-serif; */
-  font-family: "Bebas Neue", Impact, Haettenschweiler, "Arial Narrow Bold",
-    sans-serif;
+  font-family: "BebasNeue";
   /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   background-color: #cb3536;
   color: #000;

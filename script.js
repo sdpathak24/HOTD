@@ -7,10 +7,8 @@ const sassy = document.getElementById("sassy");
 const formal = document.getElementById("formal");
 const casual = document.getElementById("casual");
 const techy = document.getElementById("techy");
-
-// function reload() {
-//   window.location.reload();
-// }
+const currentDate = new Date().toLocaleDateString();
+const savedText = localStorage.getItem(currentDate);
 
 function color(z) {
   // console.log(z.classList);
@@ -23,117 +21,6 @@ function color(z) {
   // console.log(z.classList)
 }
 
-// Load saved text from local storage
-// let latestText = "";
-// let latestDate = new Date(0);
-// for (let i = 0; i < localStorage.length; i++) {
-//   const key = localStorage.key(i);
-//   const date = new Date(key);
-//   if (date > latestDate) {
-//     latestDate = date;
-//     latestText = localStorage.getItem(key);
-//   }
-// }
-// textInput.value = latestText;
-
-// Add event listener to input box
-// textInput.addEventListener("input", function () {
-//   // Get text from input box
-//   const text = textInput.value;
-
-//   // Get current date and time
-//   const now = new Date();
-
-//   const today = now.getDate();
-
-//   // Save text to local storage with current date and time as key
-//   localStorage.setItem(now.toLocaleString(), text);
-
-//   // Update savedText display
-//   let latestText = "";
-//   let latestDate = new Date(0);
-//   for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const date = new Date(key);
-//     if (date > latestDate) {
-//       latestDate = date;
-//       latestText = localStorage.getItem(key);
-//     }
-//   }
-//   textInput.value = latestText;
-//   localStorage.getItem(now.toLocaleString());
-// });
-
-// textInput.addEventListener("input", function () {
-//   // Get text from input box
-//   const text = textInput.value;
-
-//   // Get current date and time
-//   const now = new Date();
-
-//   const today = now.getDate();
-
-//   // Save text to local storage with current date and time as key
-//   localStorage.setItem(now.toLocaleString(), text);
-
-//   // Display text in the input box
-//   // textInput.value = localStorage.getItem(now.toLocaleString());
-
-//   // Load saved text from local storage
-//   let latestText = "";
-//   let latestDate = new Date(0);
-//   for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const date = new Date(key);
-//     if (date > latestDate) {
-//       latestDate = date;
-//       latestText = localStorage.getItem(key);
-//     }
-//   }
-//   textInput.value = latestText;
-// });
-
-// Load saved text from local storage
-// Load saved text from local storage
-// let latestText = "";
-// let latestDate = new Date(0);
-// for (let i = 0; i < localStorage.length; i++) {
-//   const key = localStorage.key(i);
-//   const date = new Date(key);
-//   if (date > latestDate) {
-//     latestDate = date;
-//     latestText = localStorage.getItem(key);
-//   }
-// }
-// textInput.value = latestText;
-
-// Add event listener to input box
-// Add event listener to input box
-// textInput.addEventListener("input", function () {
-//   // Get current date and time
-//   const now = new Date();
-
-//   // Save text to local storage with current date and time as key
-//   localStorage.setItem(now.toLocaleString(), textInput.value);
-
-//   // Load latest saved text from local storage
-//   let latestText = "";
-//   let latestDate = new Date(0);
-//   for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const date = new Date(key);
-//     if (date > latestDate) {
-//       latestDate = date;
-//       latestText = localStorage.getItem(key);
-//     }
-//   }
-
-//   // Display latest saved text in input box
-//   textInput.value = latestText;
-// });
-
-const currentDate = new Date().toLocaleDateString();
-const savedText = localStorage.getItem(currentDate);
 if (savedText) {
   textInput.value = savedText;
 }
@@ -147,18 +34,6 @@ textInput.addEventListener("input", () => {
 // Add event listener to save button
 if (saveButton) {
   saveButton.addEventListener("click", async function () {
-    // Get latest text from local storage
-    // let latestText = "";
-    // let latestDate = new Date(0);
-    // for (let i = 0; i < localStorage.length; i++) {
-    //   const key = localStorage.key(i);
-    //   const date = new Date(key);
-    //   if (date > latestDate) {
-    //     latestDate = date;
-    //     latestText = localStorage.getItem(key);
-    //   }
-    // }
-
     let latestText = localStorage.getItem(currentDate);
 
     // Create a new canvas element

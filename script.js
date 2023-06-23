@@ -75,9 +75,9 @@ if (saveButton) {
     }
 
     // Add #HOTD text at the bottom of the canvas
-    const hotdText = "#HOTD";
+    // const hotdText = "#HOTD";
     // possible update
-    // const hotdText = `${currentDate} ` + "#HOTD";
+    const hotdText = `${currentDate} ` + "#HOTD";
     const hotdFontSize = 50;
     context.font = `${hotdFontSize}px` + computedStyle.fontFamily;
     context.fillText(hotdText, x, canvas.height - hotdFontSize);

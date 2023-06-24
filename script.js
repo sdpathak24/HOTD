@@ -109,7 +109,7 @@ if (saveButton) {
       navigator
         .share({
           // title: "HOTD",
-          files: [new File([imageData], "myHOTD.png", { type: "image/png" })],
+          files: [new File([blob], "myHOTD.png", { type: "image/png" })],
         })
         .then(() => {
           console.log("Thanks for sharing!");

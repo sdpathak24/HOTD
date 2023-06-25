@@ -174,7 +174,7 @@ if (saveButton) {
           .catch(console.error);
       } else {
         alert(
-          "Sharing is not supported on this browser.\nDownloading image instead?"
+          "Sharing is not supported on this browser.\nDownloading image instead"
         );
         const link = document.createElement("a");
         link.download = "myHOTD.png";

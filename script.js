@@ -9,6 +9,53 @@ const casual = document.getElementById("casual");
 const techy = document.getElementById("techy");
 const currentDate = new Date().toLocaleDateString();
 const savedText = localStorage.getItem(currentDate);
+const favicons = document.getElementById("favicon");
+const badge = document.getElementById("badge");
+const homeScreenAdd = document.getElementById("homeScreenAdd");
+const openhomeScreenAdd = document.getElementById("openaddHomeScreenAdd");
+const closehomeScreenAdd = document.getElementById("closeHomeScreenAdd");
+const info = document.getElementById("info");
+const openInfo = document.getElementById("openinfo");
+const closeInfo = document.getElementById("closeinfo");
+const overlay = document.getElementById("overlay");
+
+openhomeScreenAdd.addEventListener("click", () => {
+  overlay.classList.add("active");
+  homeScreenAdd.classList.add("active");
+  if (info.classList.contains("active")) {
+    info.classList.remove("active");
+  }
+});
+
+closehomeScreenAdd.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  homeScreenAdd.classList.remove("active");
+});
+
+openInfo.addEventListener("click", () => {
+  overlay.classList.add("active");
+  info.classList.add("active");
+  if (homeScreenAdd.classList.contains("active")) {
+    homeScreenAdd.classList.remove("active");
+  }
+});
+
+closeInfo.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  info.classList.remove("active");
+});
+
+function checkInput() {
+  if (textInput.value) {
+    console.log("not empty");
+    favicons.href = "favicon/android-icon-192x192.png";
+    badge.style.display = "none";
+  } else {
+    console.log("empty");
+    favicons.href = "favicon-noti/android-icon-192x192.png";
+    badge.style.display = "visible";
+  }
+}
 
 function color(z) {
   // console.log(z.classList);
@@ -29,6 +76,15 @@ if (savedText) {
 textInput.addEventListener("input", () => {
   const currentDate = new Date().toLocaleDateString();
   localStorage.setItem(currentDate, textInput.value);
+  if (textInput.value) {
+    console.log("not empty");
+    favicons.href = "favicon/android-icon-192x192.png";
+    badge.style.display = "none";
+  } else {
+    console.log("empty");
+    favicons.href = "favicon-noti/android-icon-192x192.png";
+    badge.style.display = "initial";
+  }
 });
 
 // Add event listener to save button

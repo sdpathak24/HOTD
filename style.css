@@ -55,7 +55,7 @@ h1 {
   top: 150%;
   left: 50%;
   background: #ececec;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   color: black;
   border: 1px solid black;
   border-radius: 10px;
@@ -66,7 +66,7 @@ h1 {
 }
 
 .homeScreenAdd.active {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   top: 75%;
 }
 
@@ -90,7 +90,7 @@ h1 {
   top: 150%;
   left: 50%;
   background: #ececec;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
   color: black;
   border: 1px solid black;
   border-radius: 10px;
@@ -101,7 +101,7 @@ h1 {
 }
 
 .info.active {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   top: 65%;
 }
 

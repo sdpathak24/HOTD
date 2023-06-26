@@ -18,7 +18,7 @@ keys.forEach(function (key) {
     localStorage.removeItem(key);
     return;
   }
-  console.log("key: " + key);
+  // console.log("key: " + key);
 
   // Get the value associated with the key
   const value = localStorage.getItem(key);

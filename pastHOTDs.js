@@ -37,9 +37,11 @@ keys.forEach(function (key) {
 const today = new Date().toLocaleDateString();
 
 // Sort the lastInputs object by date in descending order
-const sortedDates = Object.keys(lastInputs).sort(function (a, b) {
-  return new Date(b) - new Date(a);
-});
+const sortedDates = Object.keys(lastInputs)
+  .sort(function (a, b) {
+    return new Date(a) - new Date(b);
+  })
+  .reverse();
 
 // Loop through the sortedDates and display the last input for each day
 let todayDivFound = false;

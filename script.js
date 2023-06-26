@@ -22,6 +22,10 @@ const openInfo = document.getElementById("openinfo");
 const closeInfo = document.getElementById("closeinfo");
 const overlay = document.getElementById("overlay");
 const homePage = document.getElementById("homePage");
+// const inp = document.getElementById("textInput");
+// const faviconLinks = document.querySelectorAll(
+//   'link[rel="icon"], link[rel="apple-touch-icon"]'
+// );
 
 // openhomeScreenAdd.addEventListener("click", () => {
 //   overlay.classList.add("active");
@@ -52,12 +56,20 @@ closeInfo.addEventListener("click", () => {
 function checkInput() {
   if (textInput.value) {
     console.log("not empty");
-    // favicons.href = "favicon/android-icon-192x192.png";
     badge.classList.add("bdHide");
+    // faviconLinks.forEach((faviconLink) => {
+    //   const href = faviconLink.getAttribute("href");
+    //   const newHref = href.replace("favicon-noti/", "favicon/");
+    //   faviconLink.setAttribute("href", newHref);
+    // });
   } else {
     console.log("empty");
-    // favicons.href = "favicon-noti/android-icon-192x192.png";
     badge.classList.remove("bdHide");
+    // faviconLinks.forEach((faviconLink) => {
+    //   const href = faviconLink.getAttribute("href");
+    //   const newHref = href.replace("favicon/", "favicon-noti/");
+    //   faviconLink.setAttribute("href", newHref);
+    // });
   }
 }
 
@@ -84,10 +96,20 @@ textInput.addEventListener("input", () => {
     console.log("not empty");
     // favicons.href = "favicon/android-icon-192x192.png";
     badge.classList.add("bdHide");
+    // faviconLinks.forEach((faviconLink) => {
+    //   const href = faviconLink.getAttribute("href");
+    //   const newHref = href.replace("favicon-noti/", "favicon/");
+    //   faviconLink.setAttribute("href", newHref);
+    // });
   } else {
     console.log("empty");
     // favicons.href = "favicon-noti/android-icon-192x192.png";
     badge.classList.remove("bdHide");
+    // faviconLinks.forEach((faviconLink) => {
+    //   const href = faviconLink.getAttribute("href");
+    //   const newHref = href.replace("favicon/", "favicon-noti/");
+    //   faviconLink.setAttribute("href", newHref);
+    // });
   }
 });
 

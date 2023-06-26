@@ -10,10 +10,15 @@ const lastInputs = {};
 keys.forEach(function (key) {
   // Check if the key has the format "MM/DD/YYYY"
   const dateRegex = /^(\d{1,2}\/\d{1,2}\/\d{4})|(\d{4}-\d{2}-\d{2})$/;
+  const keystoRemove = [];
   if (!dateRegex.test(key.substr(0, 10))) {
     // Skip this key if it doesn't have one of the supported date formats
+    keystoRemove.push(key);
+    console.log("key to remove: " + key);
+    localStorage.removeItem(key);
     return;
   }
+  console.log("key: " + key);
 
   // Get the value associated with the key
   const value = localStorage.getItem(key);

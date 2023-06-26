@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/HOTD/sw.js")
-            .then((registration) =>
-              console.log("Service worker registered:", registration)
-            )
-            .catch((error) =>
-              console.log("Service worker registration failed:", error)
-            );
-        });
-      }
-    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -93,7 +79,7 @@
       sizes="16x16"
       href="favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="favicon/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
@@ -205,13 +191,6 @@
       </ul>
     </div>
     <!-- <div class="sidebar" style="background-color: black"></div> -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/HOTD/sw.js");
-        });
-      }
-    </script>
   </body>
   <script src="script.js"></script>
   <!-- <script src="changeFav.js"></script> -->

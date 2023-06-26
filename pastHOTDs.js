@@ -9,11 +9,11 @@ const lastInputs = {};
 // Loop through the keys
 keys.forEach(function (key) {
   // Check if the key has the format "MM/DD/YYYY"
-  const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
-  if (!dateRegex.test(key.substr(0, 10))) {
-    // Skip this key if it doesn't have the format "MM/DD/YYYY"
-    return;
-  }
+  // const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+  // if (!dateRegex.test(key.substr(0, 10))) {
+  //   // Skip this key if it doesn't have the format "MM/DD/YYYY"
+  //   return;
+  // }
 
   // Get the value associated with the key
   const value = localStorage.getItem(key);

@@ -1,6 +1,6 @@
 const CACHE_NAME = "hotd-cache-v1";
 const urlsToCache = [
-  "/",
+  "/HOTD/",
   "/index.html",
   "/styles/main.css",
   "/scripts/main.js",

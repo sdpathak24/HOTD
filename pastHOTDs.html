@@ -88,21 +88,7 @@
     ></script>
     <title>HOTD!</title>
   </head>
-  <body onload="checkInput()">
-    <div class="homeScreenAdd" id="homeScreenAdd">
-      <div class="homeScreenAdd-header">
-        <h1>Add to HomeScreen</h1>
-      </div>
-      <div class="homeScreenAdd-text">
-        <p>
-          Add this app to your home screen for a better experience. You can
-          access it like a native app.
-        </p>
-        <div class="homeScreenAdd-close" id="closeHomeScreenAdd">
-          <h1>&times;</h1>
-        </div>
-      </div>
-    </div>
+  <body>
     <div class="info" id="info">
       <div class="info-header">
         <h1>What this is about?</h1>
@@ -132,48 +118,23 @@
       </div>
     </div>
     <div id="overlay"></div>
-    <h1 class="header" id="header">What's your hightlight of the day?</h1>
+    <h1 class="header" id="header">Past HOTDs</h1>
     <div class="container">
       <div class="main-area">
-        <div class="mainWrapper">
-          <textarea
-            type="text"
-            class="formal"
-            placeholder="add here"
-            id="textInput"
-            autofocus
-            maxlength="30"
-          ></textarea>
-          <div class="scroller-container">
-            <ul class="scroller">
-              <li onclick="color(this)" class="formal" id="formal">formal</li>
-              <li onclick="color(this)" class="bold" id="bold">bold</li>
-              <li onclick="color(this)" class="sassy" id="sassy">sassy</li>
-              <li onclick="color(this)" class="casual" id="casual">casual</li>
-              <!-- <li onclick="color(this)" class="techy" id="techy">techy</li> -->
-            </ul>
-          </div>
-          <div class="btn">
-            <button id="saveButton">HOTD!</button>
-          </div>
-        </div>
+        <div class="mainWrapper"></div>
       </div>
     </div>
     <div class="footer">
       <ul>
-        <a id="homePage">
-          <li
-            class="noti"
-            id="noti"
-            style="height: 100%; border-bottom: 5px solid; width: 50%"
-          >
+        <a href="index.html">
+          <li class="noti" id="noti">
             <span class="badge" id="badge"> </span>
             <i class="fa-solid fa-note-sticky fa-2xl"></i>
           </li>
         </a>
         <!-- <a id="openaddHomeScreenAdd"> -->
-        <a id="history" href="pastHOTDs.html">
-          <li>
+        <a>
+          <li style="height: 100%; border-bottom: 5px solid; width: 50%">
             <i class="fa-regular fa-file-lines fa-2xl"></i>
           </li>
         </a>
@@ -189,8 +150,7 @@
         </a>
       </ul>
     </div>
-    <!-- <div class="sidebar" style="background-color: black"></div> -->
   </body>
-  <script src="script.js"></script>
   <!-- <script src="footer.js"></script> -->
+  <script src="pastHOTDs.js"></script>
 </html>

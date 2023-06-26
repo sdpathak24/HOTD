@@ -1,7 +1,10 @@
 // Get input box and buttons
+const header = document.getElementById("header");
 const textInput = document.getElementById("textInput");
 const clearButton = document.getElementById("clearButton");
+const btnArea = document.querySelector(".btn");
 const saveButton = document.getElementById("saveButton");
+const scrollContainer = document.querySelector(".scroller-container");
 const bold = document.getElementById("bold");
 const sassy = document.getElementById("sassy");
 const formal = document.getElementById("formal");
@@ -11,33 +14,34 @@ const currentDate = new Date().toLocaleDateString();
 const savedText = localStorage.getItem(currentDate);
 const favicons = document.getElementById("favicon");
 const badge = document.getElementById("badge");
-const homeScreenAdd = document.getElementById("homeScreenAdd");
-const openhomeScreenAdd = document.getElementById("openaddHomeScreenAdd");
-const closehomeScreenAdd = document.getElementById("closeHomeScreenAdd");
+// const homeScreenAdd = document.getElementById("homeScreenAdd");
+// const openhomeScreenAdd = document.getElementById("openaddHomeScreenAdd");
+// const closehomeScreenAdd = document.getElementById("closeHomeScreenAdd");
 const info = document.getElementById("info");
 const openInfo = document.getElementById("openinfo");
 const closeInfo = document.getElementById("closeinfo");
 const overlay = document.getElementById("overlay");
+const homePage = document.getElementById("homePage");
 
-openhomeScreenAdd.addEventListener("click", () => {
-  overlay.classList.add("active");
-  homeScreenAdd.classList.add("active");
-  if (info.classList.contains("active")) {
-    info.classList.remove("active");
-  }
-});
+// openhomeScreenAdd.addEventListener("click", () => {
+//   overlay.classList.add("active");
+//   homeScreenAdd.classList.add("active");
+//   if (info.classList.contains("active")) {
+//     info.classList.remove("active");
+//   }
+// });
 
-closehomeScreenAdd.addEventListener("click", () => {
-  overlay.classList.remove("active");
-  homeScreenAdd.classList.remove("active");
-});
+// closehomeScreenAdd.addEventListener("click", () => {
+//   overlay.classList.remove("active");
+//   homeScreenAdd.classList.remove("active");
+// });
 
 openInfo.addEventListener("click", () => {
   overlay.classList.add("active");
   info.classList.add("active");
-  if (homeScreenAdd.classList.contains("active")) {
-    homeScreenAdd.classList.remove("active");
-  }
+  // if (homeScreenAdd.classList.contains("active")) {
+  //   homeScreenAdd.classList.remove("active");
+  // }
 });
 
 closeInfo.addEventListener("click", () => {
@@ -48,12 +52,12 @@ closeInfo.addEventListener("click", () => {
 function checkInput() {
   if (textInput.value) {
     console.log("not empty");
-    favicons.href = "favicon/android-icon-192x192.png";
-    badge.style.display = "none";
+    // favicons.href = "favicon/android-icon-192x192.png";
+    badge.classList.add("bdHide");
   } else {
     console.log("empty");
-    favicons.href = "favicon-noti/android-icon-192x192.png";
-    badge.style.display = "visible";
+    // favicons.href = "favicon-noti/android-icon-192x192.png";
+    badge.classList.remove("bdHide");
   }
 }
 
@@ -78,12 +82,12 @@ textInput.addEventListener("input", () => {
   localStorage.setItem(currentDate, textInput.value);
   if (textInput.value) {
     console.log("not empty");
-    favicons.href = "favicon/android-icon-192x192.png";
-    badge.style.display = "none";
+    // favicons.href = "favicon/android-icon-192x192.png";
+    badge.classList.add("bdHide");
   } else {
     console.log("empty");
-    favicons.href = "favicon-noti/android-icon-192x192.png";
-    badge.style.display = "initial";
+    // favicons.href = "favicon-noti/android-icon-192x192.png";
+    badge.classList.remove("bdHide");
   }
 });
 

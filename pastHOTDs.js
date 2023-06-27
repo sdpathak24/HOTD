@@ -14,7 +14,7 @@ keys.forEach(function (key) {
   if (!dateRegex.test(key.substr(0, 10))) {
     // Skip this key if it doesn't have one of the supported date formats
     keystoRemove.push(key);
-    console.log("key to remove: " + key);
+    // console.log("key to remove: " + key);
     // localStorage.removeItem(key);
     return;
   }

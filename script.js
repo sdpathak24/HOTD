@@ -117,8 +117,6 @@ textInput.addEventListener("input", () => {
 if (saveButton) {
   saveButton.addEventListener("click", async function () {
     if (textInput.value) {
-      let latestText = localStorage.getItem(currentDate);
-
       // Create a new canvas element
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
@@ -144,9 +142,41 @@ if (saveButton) {
       const x = canvas.width / 2;
       const y = canvas.height / 2;
       const fontSize = parseInt(computedStyle.fontSize);
-      const lineHeight = fontSize * 1.5; // adjust line height as needed
+      const lineHeight = fontSize * 2.5; // adjust line height as needed
       const maxWidth = canvas.width - 100; // leave some margin on the sides
-      const lines = latestText.split("\n");
+      const words = textInput.value.split(" ");
+      const lines = [];
+      let currentLine = words[0];
+      for (let i = 1; i < words.length; i++) {
+        const word = words[i];
+        const width = context.measureText(currentLine + " " + word).width;
+        if (word.length > maxWidth) {
+          // If the word itself is longer than the maximum width, split it and add the parts to separate lines
+          let part = "";
+          for (let j = 0; j < word.length; j++) {
+            const newPart = part + word[j];
+            const newWidth = context.measureText(
+              currentLine + " " + newPart
+            ).width;
+            if (newWidth >= maxWidth) {
+              lines.push(currentLine);
+              currentLine = newPart;
+              part = "";
+            } else {
+              part = newPart;
+            }
+          }
+          if (part !== "") {
+            currentLine += " " + part;
+          }
+        } else if (width < maxWidth) {
+          currentLine += " " + word;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      lines.push(currentLine);
       const maxLines = Math.floor(canvas.height / lineHeight);
       if (lines.length > maxLines) {
         lines.splice(maxLines, lines.length - maxLines);
@@ -161,7 +191,7 @@ if (saveButton) {
       // const hotdText = "#HOTD";
       // possible update
       const hotdText = `${currentDate} ` + "#HOTD";
-      const hotdFontSize = 50;
+      const hotdFontSize = 40;
       context.font = `${hotdFontSize}px` + computedStyle.fontFamily;
       context.fillText(hotdText, x, canvas.height - hotdFontSize);
 

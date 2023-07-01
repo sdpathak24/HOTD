@@ -202,18 +202,19 @@ textarea {
   height: 50%;
   /* background-color: #cb3536; */
   outline: none;
-  padding: 0 1rem;
+  padding: 0 5rem;
   display: flex;
   justify-content: center;
   text-align: center;
   color: #000;
-  font-size: 54px;
+  font-size: 44px;
   /* font-family: "Oswald"; */
   border: 1px solid #777;
   background-color: #e5e5e5;
   resize: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  white-space: pre-wrap;
 }
 
 input::placeholder {

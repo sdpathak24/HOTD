@@ -28,6 +28,12 @@
       "type": "image/png"
     }
   ],
+  "screenshots": [
+    {
+      "src": "../screenshots/hotd.png",
+      "type": "image/png"
+    }
+  ],
   "start_url": "/HOTD/",
   "background_color": "#ffffff",
   "theme_color": "#007bff",

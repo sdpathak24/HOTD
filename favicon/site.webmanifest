@@ -37,5 +37,12 @@
   "start_url": "/HOTD/",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
-  "display": "standalone"
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "browser",
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "portrait"
 }
